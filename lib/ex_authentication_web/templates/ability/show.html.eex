@@ -1,0 +1,13 @@
+<h2>Show Ability</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @ability.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: ability_path(@conn, :edit, @ability) %></span>
+<span><%= link "Back", to: ability_path(@conn, :index) %></span>

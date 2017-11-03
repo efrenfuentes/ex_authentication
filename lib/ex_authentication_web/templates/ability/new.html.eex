@@ -1,0 +1,5 @@
+<h2>New Ability</h2>
+
+<%= render "form.html", Map.put(assigns, :action, ability_path(@conn, :create)) %>
+
+<span><%= link "Back", to: ability_path(@conn, :index) %></span>
