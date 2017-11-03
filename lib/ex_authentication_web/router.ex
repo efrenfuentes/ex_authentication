@@ -19,7 +19,7 @@ defmodule ExAuthenticationWeb.Router do
     get "/", PageController, :index
     resources "/groups", GroupController
     resources "/users", UserController
-    resources "/clents", ClientController
+    resources "/clients", ClientController
     resources "/abilities", AbilityController
   end
 
