@@ -33,25 +33,25 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li <%= if @conn.request_path == "/groups" do %>class="active"<% end %>>
                         <a href="/groups">
                             <i class="material-icons">group</i>
                             <p>Groups</p>
                         </a>
                     </li>
-                    <li>
+                    <li <%= if @conn.request_path == "/users" do %>class="active"<% end %>>
                         <a href="/users">
                             <i class="material-icons">person</i>
                             <p>Users</p>
                         </a>
                     </li>
-                    <li>
+                    <li <%= if @conn.request_path == "/clients" do %>class="active"<% end %>>
                         <a href="/clients">
                             <i class="material-icons">computer</i>
                             <p>Clents</p>
                         </a>
                     </li>
-                    <li>
+                    <li <%= if @conn.request_path == "/abilities" do %>class="active"<% end %>>
                         <a href="/abilities">
                             <i class="material-icons">security</i>
                             <p>Abilities</p>
