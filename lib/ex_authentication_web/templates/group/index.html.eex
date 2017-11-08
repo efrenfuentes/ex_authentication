@@ -1,28 +1,26 @@
-<h2>Listing Groups</h2>
+<div class="card">
+  <div class="card-header" data-background-color="purple">
+      <h4 class="title">Groups<span><%= link "New Group", to: group_path(@conn, :new), class: "btn btn-primary btn-round btn-xs pull-right" %></span></h4>
+  </div>
+  <div class="card-content table-responsive">
+      <table class="table">
+          <thead class="text-primary">
+              <th>Name</th>
+              <th>Description</th>
+              <th></th>
+          </thead>
+          <tbody>
+            <%= for group <- @groups do %>
+              <tr>
+                <td><%= link group.name, to: group_path(@conn, :edit, group) %></td>
+                <td><%= group.description %></td>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for group <- @groups do %>
-    <tr>
-      <td><%= group.name %></td>
-      <td><%= group.description %></td>
-
-      <td class="text-right">
-        <span><%= link "Show", to: group_path(@conn, :show, group), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: group_path(@conn, :edit, group), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New Group", to: group_path(@conn, :new) %></span>
+                <td class="text-right">
+                  <span><%= link "Delete", to: group_path(@conn, :delete, group), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs btn-round" %></span>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>

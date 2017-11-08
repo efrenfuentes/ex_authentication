@@ -1,5 +1,6 @@
-<h2>New Group</h2>
-
-<%= render "form.html", Map.put(assigns, :action, group_path(@conn, :create)) %>
-
-<span><%= link "Back", to: group_path(@conn, :index) %></span>
+<div class="card">
+  <div class="card-header" data-background-color="purple">
+      <h4 class="title">New Group</h4>
+  </div>
+  <%= render "form.html", Map.put(assigns, :action, group_path(@conn, :create)) %>
+</div>
