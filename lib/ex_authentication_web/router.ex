@@ -1,5 +1,6 @@
 defmodule ExAuthenticationWeb.Router do
   use ExAuthenticationWeb, :router
+  alias Utils.Redirector
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -16,6 +17,7 @@ defmodule ExAuthenticationWeb.Router do
   scope "/", ExAuthenticationWeb do
     pipe_through :browser # Use the default browser stack
 
+    get "/", Redirector, to: "/groups"
     resources "/groups", GroupController
     resources "/users", UserController
     resources "/clients", ClientController
