@@ -16,7 +16,6 @@ defmodule ExAuthenticationWeb.Router do
   scope "/", ExAuthenticationWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
     resources "/groups", GroupController
     resources "/users", UserController
     resources "/clients", ClientController
